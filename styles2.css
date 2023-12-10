@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial, Arial, Helvetica, sans-serif;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    font: color #333;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    height: 70px;
+}
+.logo{
+    flex: 1;
+}
+
+.menu{
+    flex: 3;
+    display: flex;
+}
+.orther{
+    flex: 1;
+    display: flex;
+}
+.orther > li {
+    padding: 0 12px;
+}
+.sub-menu{
+    position: absolute;
+    width: 150px;
+    border: 1px solid#ccc;
+    padding: 10px 0 10px 20px;
+    visibility: hidden;
+    top: 50px;
+    transition: 0.5s;
+}
+.sub-menu ul{
+    padding: 20px;
+}
+.sub-menu ul a{
+    font-weight: normal!important;
+    font-size: 12px!important;
+}   
+.menu  li  a {
+    font-size: 12px;
+    font-weight: bold!important;
+    display: block;
+    line-height: 20px;
+}
+.menu > li:hover .sub-menu{
+    visibility: visible;
+    top: 50px;
+}
+.menu > li {
+    padding: 0 12px;
+    position: relative;
+    
+}
+.orther > li:first-child{
+    position: relative;
+}
+.orther > li:first-child input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #333;
+}
+.orther > li:first-child i {
+    position: absolute;
+    right: 10px;
+}
+#slider{
+    padding-bottom: 30px;
+    border-bottom: 2px solid#333;
+}
+.aspect-ratio-169 {
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  
+  .aspect-ratio-169 img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  .dot-container{
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  .dot {
+    height: 16px;
+    width: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+  .dot.active{
+    background-color: #333;
+  }

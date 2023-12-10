@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="">
+        </div>
+        <div class="menu">
+            <li><a href="">Nữ</a>
+                <ul class="sub-menu">
+                    <li><a href="">hàng mới về</a></li>
+                    <li><a href="">bộ sưu tập</a></li>
+                    <li><a href="">áo</a>
+                        <ul>
+                            <li><a href="">áo sơ mi</a></li>
+                            <li><a href="">áo len</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">quần</a>
+                        <ul>
+                            <li><a href="">quần jeans</a></li>
+                            <li><a href="">quần ngắn</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </ul>
+                  
+            </li>
+            <li><a href="">Nam</a></li>
+            <li><a href="">Trẻ Em</a></li>
+            <li><a href="">Về Chúng Tôi</a></li>
+        </div>
+        <div class="orther">
+            <li><i><input type="text" id="searchInput" placeholder="Tìm kiếm"></li></i>
+            <li> <a class="search-icon" href="">🔍</a></li>
+            <li> <a class="user-icon" href="">👤</a></li>
+            <li> <a class="cart-icon" href="">🛒</a></li>
+        </div>
+    </header>
+    <section id="slider">
+    <div class="aspect-ratio-169">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+        <img src="">
+    </div>
+    <div class="dot-container">
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+    </div>
+   
+</body>
+<script>
+    const imgPossition = document.querySelectorAll(".aspect-ratio-169 img")
+    const imgContainer = document.querySelector(".aspect-ratio-169")
+    const dotItem = document.querySelectorAll(".dot")
+    let imgnuber = imgPossition.length
+    let index = 0
+    //console.log(imgPossition)
+    imgPossition.forEach(function(image,index){
+        image.style.left = index*100 + "%"
+        dotItem[index].addEventListener("click",function(){
+            slider (index)
+
+        })
+    })
+    function imgslide (){
+        index++;
+        console.log(index)
+        if (index>=imgnuber) {index=0}
+    }
+    function slider (index) {
+
+    imgContainer.style.left = "-" +index*100+ "%"
+    const dotActive = document.querySelector('.active')
+    dotActive.classList.remove("active")
+    dotItem[index].classList.add("active")
+    }
+    setInterval(imgslide,5000)
+
+</script>
+</html>
